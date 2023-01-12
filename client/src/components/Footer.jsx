@@ -5,7 +5,9 @@ const Footer = ( { router } ) => {
     // const router = router
     return(
         <div className="footerContainer" >
-            <Link to="/BusinessPage">HOME</Link>
+            <Link to="/">HOME</Link>
+            <Link to="/Login">LOGIN</Link>
+            <Link to="/BusinessPage">BUSINESS</Link>
         </div>
     )
 }

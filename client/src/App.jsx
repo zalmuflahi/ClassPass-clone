@@ -3,6 +3,7 @@ import Login from './components/Login.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import HomeScreen from './components/HomeScreen.jsx'
+import BusinessPage from './components/BusinessPage.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -22,6 +23,10 @@ function App() {
       path: "/Login",
       element: <Login />,
     },
+    {
+      path: "/BusinessPage",
+      element: <BusinessPage />,
+    },
   ])
 
 return (
@@ -30,7 +35,7 @@ return (
     <div className="mainComponents">
       <RouterProvider router={router} /> 
     </div>
-    <Footer />
+    <Footer/>
   </div>
 )
 }

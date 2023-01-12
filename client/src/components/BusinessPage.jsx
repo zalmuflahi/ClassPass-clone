@@ -1,6 +1,6 @@
 const BusinessPage = () => {
     return(
-        <div>
+        <div className="mainComponents">
             Business Page
         </div>
     )

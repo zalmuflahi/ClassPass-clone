@@ -1,7 +1,9 @@
 const HomeScreen = () => {
     return(
-        <div className="HomeScreen">
-            Homescreen
+        <div className="mainComponents">
+            <div className="HomeScreen">
+                Homescreen
+            </div>
         </div>
     )
 }

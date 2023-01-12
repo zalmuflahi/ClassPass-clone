@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Login from './components/Login.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
+import HomeScreen from './components/HomeScreen.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,21 +13,10 @@ import "./App.css"
 
 function App() {
 
-  const Home = () => {
-    const navigate = useNavigate() 
-    return (
-      <div>
-        <h1>Home</h1>
-        <h2 >Go to login page</h2>
-        <button onClick={() => { navigate("/Login") }}>NAV</button>
-      </div>
-    )
-  }
-
-  const router = createBrowserRouter([
+    const router = createBrowserRouter([
     {
     path: "/", 
-      element: <Home  />,
+      element: <HomeScreen  />,
     },
     {
       path: "/Login",
@@ -37,7 +27,9 @@ function App() {
 return (
   <div className="App">
     <Header />
-    <RouterProvider router={router} className="mainComponents"/> 
+    <div className="mainComponents">
+      <RouterProvider router={router} /> 
+    </div>
     <Footer />
   </div>
 )

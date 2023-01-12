@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import Login from './components/Login.jsx'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -8,7 +10,6 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   const Home = () => {
     const navigate = useNavigate() 
@@ -24,17 +25,19 @@ function App() {
   const router = createBrowserRouter([
     {
     path: "/", 
-      element: <Home count={count} />,
+      element: <Home  />,
     },
-{
-  path: "/Login",
-  element: <Login count={count} />,
-},
+    {
+      path: "/Login",
+      element: <Login />,
+    },
   ])
 
 return (
   <div className="App">
+    <Header />
     <RouterProvider router={router} /> 
+    <Footer />
   </div>
 )
 }

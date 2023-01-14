@@ -1,8 +1,9 @@
 const Login = () =>{
     return(
-        <div>
-            <hi>LOGIN PAGE</hi>
-            <button>home page</button>
+        <div className="mainComponents">
+
+            <div className="loginContainer">
+            </div>
         </div>
     )
 }

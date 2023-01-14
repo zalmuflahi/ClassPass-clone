@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Nunito+Sans&family=Spline+Sans+Mono:wght@500&display=swap');@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Nunito+Sans&family=Spline+Sans+Mono:wght@500&display=swap');
 
 body {
+    margin:0;
+    width: 100%;
     font-family: 'Mukta', sans-serif;
+    /* background-color: #cccccc; */
     /* font-family: 'Nunito Sans', sans-serif; */
 }
 
 .headerContainer,
 .footerContainer {
-    height: 8vh;
+    height: 6vh;
     width: 100%;
-    background-color: #35363a;
+    background-color:white;
+    color: #393939;;
     padding: 0;
     margin: 0;
     display: flex;
@@ -23,21 +27,45 @@ body {
     position: absolute;
     align-items: center;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
 .footerContainer {
-    color: white;
     position: absolute;
     bottom: 0;
     justify-content: center;
     align-items: center;
     display: flex;
-    flex-direction: column;
 }
 
 .mainComponents {
-    position: absolute;
-    top: 8vh;
-    bottom: 8vh;
+    padding-top: 6vh;
+    height: 88vh;
+}
+
+.links {
+    
+    padding-right: 2vw;
+    padding-left: 2vw;
+}
+
+.extra {
+    overflow: -moz-hidden-unscrollable;
+}
+
+.loginContainer{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    overflow: hidden;
+    background-image: url("./assets/gym_stock_photo.jpg");
+    display: flex;
+    align-content: center;
+}
+
+.loginBox{
+    width: 5vw;
+    height: 5vh;
+    background-color: white;
+
 }

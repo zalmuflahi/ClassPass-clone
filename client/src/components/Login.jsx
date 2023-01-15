@@ -1,3 +1,7 @@
+import { gapi } from 'gapi-script';
+// import { GoogleLogin, GoogleLogout } from 'react-google-login';
+
+
 const Login = () =>{
     return(
         <div className="mainComponents">

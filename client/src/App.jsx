@@ -36,7 +36,7 @@ return (
           
 
         </Routes>
-      <Footer/>
+      
     </BrowserRouter>
   </div>
 )

@@ -9,6 +9,7 @@ import "./App.css"
 
 function App() {
 
+  const [userObj, setUserObj] = useState(null)
   //   const router = createBrowserRouter([
   //   {
   //   path: "/", 
@@ -31,7 +32,7 @@ return (
         <Routes>
                 
             <Route path={'/'} element={<HomeScreen />} />
-            <Route path={'/Login'} element={<Login />} />
+        <Route path={'/Login'} element={<Login userObj={userObj} setUserObj={setUserObj}/>} />
             <Route path={'/BusinessPage'} element={<BusinessPage />} />
           
 

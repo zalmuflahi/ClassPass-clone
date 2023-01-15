@@ -1,39 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Nunito+Sans&family=Spline+Sans+Mono:wght@500&display=swap');@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Nunito+Sans&family=Spline+Sans+Mono:wght@500&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 body {
     margin:0;
     width: 100%;
     font-family: 'Mukta', sans-serif;
-    /* background-color: #cccccc; */
-    /* font-family: 'Nunito Sans', sans-serif; */
+}
+
+.busPageLeft, .busPageRight {
+    display: inline-block;
+    width: 50%;
+}
+.sessionImage{
+    width: 100%;
+    transition: .2s;
+}
+.sessionImage:hover{
+    scale: 1.1;
 }
 
 .headerContainer,
 .footerContainer {
     height: 6vh;
     width: 100%;
-    background-color:white;
-    color: #393939;;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: row;
 }
 
 .headerContainer {
+    color: #393939;;
+    background-color:white;
     top: 0;
-    justify-content: center;
+    justify-content: right;
     color: white;
     position: absolute;
     align-items: center;
     display: flex;
-    /* flex-direction: column; */
+    box-shadow: 0px 0px 13px #00000019;    /* flex-direction: column; */
 }
 
 .footerContainer {
+    color: #393939;;
+    background-color:white;
     position: absolute;
     bottom: 0;
     justify-content: center;
@@ -44,6 +51,11 @@ body {
 .mainComponents {
     padding-top: 6vh;
     height: 88vh;
+    /* display: flex;
+    align-content: center; */
+    align-items: center;
+        display: flex;
+        flex-direction: column;
 }
 
 .links {

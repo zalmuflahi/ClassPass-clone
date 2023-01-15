@@ -30,13 +30,12 @@ return (
       <Header />
         <Routes>
                 
-            <Route path={'/'} element={<HomeScreen/>} />
+            <Route path={'/'} element={<HomeScreen />} />
             <Route path={'/Login'} element={<Login />} />
             <Route path={'/BusinessPage'} element={<BusinessPage />} />
           
 
         </Routes>
-      {/* <Footer/> */}
     </BrowserRouter>
   </div>
 )

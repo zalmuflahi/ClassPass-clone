@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Nunito+Sans&family=Spline+Sans+Mono:wght@500&display=swap');@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Nunito+Sans&family=Spline+Sans+Mono:wght@500&display=swap');
+
 .App {
     min-height: 100vh;
 }
+
 html, body {
     margin:0;
     width: 100%;
@@ -50,8 +52,8 @@ html, body {
 .mainComponents {
     padding-top: 6vh;
     height: 100vh;
-    /* display: flex;
-    align-content: center; */
+    display: flex;
+    align-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -78,11 +80,4 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.loginBox{
-    width: 5vw;
-    height: 5vh;
-    background-color: white;
-
 }

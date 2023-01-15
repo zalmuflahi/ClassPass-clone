@@ -5,7 +5,7 @@ import Footer from "./Footer"
 const BusinessPage = () => {
     return(
         <div className="mainComponents">
-            <div className="p-4 mx-10 flex space-x-4 w-4/5 flex justify-center h-screen">
+            <div className="pt-4 pr-4 pl-4 pb-50 mb-200 mx-10 flex space-x-4 w-4/5 flex justify-center h-screen">
                 <LeftColumn />
                 <RightColumn />
             </div>

@@ -3,10 +3,11 @@ import { Link } from "react-router-dom"
 const Header = () => {
     return(
         <div className = "headerContainer">
-            <div id="navLinks" className="justify-end">
-                <Link  className="links" to="/">HOME</Link>
-                <Link className="links" to="/Login">LOGIN</Link>
-                <Link className="links" to="/BusinessPage">BUSINESS</Link>
+            <div id="navLinks">
+
+                <Link  className="links" to="/">Home</Link>
+                <Link className="links" to="/Login">Login</Link>
+                <Link className="links" to="/BusinessPage">View Business</Link>
             </div>
         </div>
     )

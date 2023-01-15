@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Login from './components/Login.jsx'
 import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
+// import Footer from './components/Footer.jsx'
 import HomeScreen from './components/HomeScreen.jsx'
 import BusinessPage from './components/BusinessPage.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -30,9 +30,9 @@ return (
       <Header />
         <Routes>
                 
-            <Route path={'/'} element={<HomeScreen />} />
-            <Route path={'/login'} element={<Login />} />
-            <Route path={'/businesspage'} element={<BusinessPage />} />
+            <Route path={'/'} element={<HomeScreen/>} />
+            <Route path={'/Login'} element={<Login />} />
+            <Route path={'/BusinessPage'} element={<BusinessPage />} />
           
 
         </Routes>

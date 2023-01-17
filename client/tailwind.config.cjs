@@ -11,6 +11,7 @@ module.exports = {
     './src/components/Login.jsx',
     './src/components/busPageContents/RightColumn.jsx',
     './src/components/busPageContents/LeftColumn.jsx',
+    './src/components/busPageContents/Calendar.jsx',
   ],
   theme: {
     extend: {},

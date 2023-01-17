@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Nunito+Sans&family=Spline+Sans+Mono:wght@500&display=swap');@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Nunito+Sans&family=Spline+Sans+Mono:wght@500&display=swap');
-
+.App {
+    min-height: 100vh;
+}
 html, body {
     margin:0;
     width: 100%;
@@ -10,13 +12,6 @@ html, body {
 .busPageLeft, .busPageRight {
     display: inline-block;
     width: 50%;
-}
-.sessionImage{
-    width: 100%;
-    transition: .2s;
-}
-.sessionImage:hover{
-    scale: 1.1;
 }
 
 .headerContainer,
@@ -40,8 +35,8 @@ html, body {
 }
 
 .footerContainer {
-    color: #393939;;
-    background-color:white;
+    color: #ffffff;;
+    background-color:rgb(0, 0, 0);
     position: absolute;
     flex-shrink: 0;
     justify-content: center;
@@ -53,13 +48,14 @@ html, body {
 
 .mainComponents {
     padding-top: 6vh;
-    height: 88vh;
+    height: 100vh;
     /* display: flex;
     align-content: center; */
     align-items: center;
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
+    position: relative;
 }
 
 .links {

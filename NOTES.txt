@@ -1,0 +1,1 @@
+To use tailwind on a new component add the path to that component to the tailwind.config.cjs file in the Content section

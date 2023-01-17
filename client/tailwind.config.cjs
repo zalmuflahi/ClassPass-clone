@@ -8,7 +8,9 @@ module.exports = {
     './src/components/Footer.jsx',
     './src/components/Header.jsx',
     './src/components/HomeScreen.jsx',
-    './src/components/Login.jsx'
+    './src/components/Login.jsx',
+    './src/components/busPageContents/RightColumn.jsx',
+    './src/components/busPageContents/LeftColumn.jsx',
   ],
   theme: {
     extend: {},

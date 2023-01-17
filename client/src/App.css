@@ -22,7 +22,7 @@ html, body {
 .footerContainer {
     width: 100%;
     padding: 0;
-    margin: 0;
+    /* margin: 0; */
 }
 
 .headerContainer {
@@ -41,13 +41,14 @@ html, body {
 .footerContainer {
     color: #ffffff;;
     background-color:rgb(0, 0, 0);
-    position: absolute;
+    position: fixed;
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
     display: flex;
     height: 8vh;
     bottom: 0;
+    margin-top: 8vh;
 }
 
 .mainComponents {

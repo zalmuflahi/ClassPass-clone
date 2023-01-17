@@ -9,6 +9,7 @@ const BusinessPage = () => {
                 <LeftColumn />
                 <RightColumn />
             </div>
+
             <Footer />
         </div>
     )

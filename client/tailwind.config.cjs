@@ -17,3 +17,5 @@ module.exports = {
   },
   plugins: [],
 }
+
+//when adding a new component, put the link to it in this file 

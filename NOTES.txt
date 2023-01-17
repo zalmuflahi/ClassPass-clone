@@ -1,0 +1,44 @@
+To use tailwind on a new component add the path to that component to the tailwind.config.cjs file in the Content section
+
+
+Tailwind Notes: just set className="text-xl font-bold" etc to any element 
+
+Cheatsheet
+https://nerdcave.com/tailwind-cheat-sheet
+
+Text Size
+text-xs sm base lg xl 1-9xl
+
+Font Weight https://tailwindcss.com/docs/font-weight
+font-thin extralight light normal medium semibold bold extrabold black
+
+
+Height, Width
+10rem i think: h-10
+Half of container: w-1/2 
+set to screen size: h-screen
+
+Padding, Margin
+all sides: p-4
+horizontal: px-4
+vertical: py-4
+Bottom: pb-4
+Top: pt-4
+Right: pr-4
+Left: pl-4
+
+Space between children: https://tailwindcss.com/docs/space
+horizontal: flex space-x-4
+vertical: flex flex-col space-y-4
+can use negative values. 
+If items are right aligned use: flex-row-reverse space-x-4 space-x-reverse
+
+Center Objects, justify right/left
+className = "flex + 
+horizontally: justify-center
+vertically: items-center
+align right: justify-end
+
+
+Image crop, Overflow https://tailwindcss.com/docs/overflow
+crop at div: overflow-auto

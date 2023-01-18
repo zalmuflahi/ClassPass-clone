@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@mooncake-dev/react-day-time-picker": "^1.0.5",
+    "bootstrap": "^5.2.3",
     "gapi-script": "^1.2.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2"
   },

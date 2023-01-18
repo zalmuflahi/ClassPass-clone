@@ -26,7 +26,6 @@ const LeftColumn = () => {
                 <hr></hr>
             <div className="pt-5 pb-5">
                 <h1 className="text-2xl font-bold pb-2">Schedule</h1>
-                <h3 className="text-">Find a schedule component for this</h3>
                 <Calendar/> 
             </div>
                 <hr></hr>

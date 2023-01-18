@@ -1,17 +1,24 @@
 import Carousel from 'react-bootstrap/Carousel';
+import CarouselItem from './CarouselItem';
+
 
 const HomeScreen = () => {
     const images = ['https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/evz5icjwo0hctbxc8yys.jpg',
         'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/ym00yzc9mwaxskhbp0xo.jpg',
         'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/cgs7gqb0hheq9uwkdgd1.jpg']
 
-    // Add get request for index of businesses
+    // Add get request for all businesses
 
-        return(
+    return(
         <div className="mainComponents">
             <div className="HomeScreen">
                 <Carousel className="p-6">
-                    <Carousel.Item>
+
+                    {gyms.map((gym)=>{
+                        <CarouselItem gym={gym} />
+                    })}
+
+                    {/* <Carousel.Item>
                         <img
                             className="d-block w-100"
                             src={images[0]}
@@ -47,7 +54,7 @@ const HomeScreen = () => {
                                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
                             </p>
                         </Carousel.Caption>
-                    </Carousel.Item>
+                    </Carousel.Item> */}
                 </Carousel>
             </div>
         </div>

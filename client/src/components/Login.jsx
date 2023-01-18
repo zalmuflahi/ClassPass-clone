@@ -8,7 +8,7 @@ const Login = ({ userObj, setUserObj }) =>{
     const navigate = useNavigate()
 
     const clientId = import.meta.env.VITE_API_G_CLIENT_ID
-    const apiKey = import.meta.env.VITE_API_KEY_GAPI
+    // const apiKey = import.meta.env.VITE_API_KEY_GAPI
 
     useEffect(() => {
         const initClient = () => {

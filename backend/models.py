@@ -24,14 +24,20 @@ class User(db.Model):
         self.username = username
         self.email = email
         self.password = password
-
+    
     def to_dict(self):
         return {
             'id': self.id,
-            'user_id': self.user_id,
-            'business_id': self.businesses_id,
             'username': self.username,
             'email': self.email
+        }
+
+    def to_dict2(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email,
+            'activities': [activity.to_dict() for activity in Activity.query.filter_by(user_id=self.id)]
         }
 
     def __repr__(self):
@@ -63,6 +69,15 @@ class Business(db.Model):
             'businessname': self.businessname,
             'address': self.address,
             'info': self.info
+        }
+
+    def to_dict2(self):
+        return {
+            'id': self.id,
+            'businessname': self.businessname,
+            'address': self.address,
+            'info': self.info,
+            'activities': [activity.to_dict() for activity in Activity.query.filter_by(business_id=self.id)]
         }
 
     def __repr__(self):
@@ -99,6 +114,8 @@ class Activity(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
+            'user_id': self.user_id,
+            'business_id': self.business_id,
             'type': self.type,
             'description': self.description,
             'credit_cost': self.credit_cost,

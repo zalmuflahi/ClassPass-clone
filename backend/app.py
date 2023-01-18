@@ -17,7 +17,7 @@ migrate = Migrate(app, db)
 
 @app.get('/')
 def home():
-    return send_file('welcome.html')
+    return send_file('index.html')
 
 # get all users in list format
 
@@ -34,7 +34,7 @@ def all_users():
 def show(id):
     user = User.query.get(id)
     if user:
-        return jsonify(user.to_dict())
+        return jsonify(user.to_dict2())
     else:
         return {}, 404
 
@@ -88,7 +88,7 @@ def all_businesses():
 def show_business(id):
     business = Business.query.get(id)
     if business:
-        return jsonify(business.to_dict())
+        return jsonify(business.to_dict2())
     else:
         return {}, 404
 

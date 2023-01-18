@@ -6,7 +6,7 @@ const HomeScreen = () => {
     const images = ['https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/evz5icjwo0hctbxc8yys.jpg',
         'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/ym00yzc9mwaxskhbp0xo.jpg',
         'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/cgs7gqb0hheq9uwkdgd1.jpg']
-
+    
     // Add get request for all businesses
 
     return(

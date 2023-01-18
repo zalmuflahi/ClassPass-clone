@@ -1,6 +1,7 @@
 import Calendar from './Calendar' 
-import Reviews from './Reviews' 
-import Ratings from './Ratings'
+import ReviewForm from './ReviewForm' 
+import Ratings from './Ratings' 
+import Reviews from './Reviews'
 
 const LeftColumn = () => {
     // const [isScheduling, setIsScheduling] = useState(false);
@@ -31,7 +32,8 @@ const LeftColumn = () => {
             </div>
                 <hr></hr>
             <div className="pt-5 pb-5">
-                <Reviews/> 
+                <Reviews/>
+                <ReviewForm/> 
                 <h1 className="text-2xl font-bold pb-2">{gymName} Reviews</h1>
                 {/* <h3 className="text-">display reviews (try to find premade element and put into a component)</h3> */}
             </div>

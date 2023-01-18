@@ -11,6 +11,8 @@ function App() {
   const [credits, setCredits] = useState(200)
   const [userObj, setUserObj] = useState(null)
 
+  // get request for user by email probably, setCredits to user.credits
+
   useEffect(()=>{
     if (userObj){
       setCredits(200)

@@ -2,10 +2,10 @@ import { Link, useNavigate } from "react-router-dom"
 import { GoogleLogout } from 'react-google-login';
 
 
-const Header = ({userObj, setUserObj}) => {
+const Header = ({userObj, setUserObj, credits, setCredits}) => {
     const clientId = import.meta.env.VITE_API_G_CLIENT_ID
     const navigate = useNavigate()
-    // Add google logout button function
+
     const logOut = () => {
         setUserObj(null);
         navigate("/Login")
@@ -23,6 +23,7 @@ const Header = ({userObj, setUserObj}) => {
             <div className="flex items-center" >
                 
                 <Link className="links" to="/BusinessPage">View Business</Link>
+                {userObj ? <div className="pr-2 pl-2"><div className="bg-blue-600 font-semibold rounded-full py-2 px-3">{credits} Credits</div></div> : null}
                 {userObj ? <div className="pr-2 pl-2"><GoogleLogout  clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} /></div> : <Link className="links" to="/Login">Login</Link> }
             </div>
         </div>

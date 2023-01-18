@@ -1,5 +1,5 @@
 
-const RightColumn = () => {
+const RightColumn = ({business}) => {
     const GAPIkey = import.meta.env.VITE_API_KEY_GAPI
 
 
@@ -11,7 +11,7 @@ const RightColumn = () => {
             <div className="mt-5 flex-col">
                 <a href="https://www.google.com/maps/place/142+West+St,+New+York,+NY+10007/@40.7140108,-74.0152184,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25a1be5ea0469:0xa75e6b3063b8d64f!8m2!3d40.7140108!4d-74.0130297" className="flex items-center pb-1 space-x-2">
                     <img className="w-5 h-5" src="https://cdn-icons-png.flaticon.com/512/9077/9077975.png" />
-                    <h1 className="break-all">123 Broadway Ave. New York, NY</h1>
+                    <h1 className="break-all">{business.address}</h1>
                 </a>
                 <a href="https://www.rumbleboxinggym.com/" className="flex items-center pb-1 space-x-2">
                     <img className="w-5 h-5" src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" />

@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from sqlalchemy.orm import relationship
 
 db = SQLAlchemy()
 migrate = Migrate(db)
@@ -16,6 +17,8 @@ class User(db.Model):
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
+
+    activities = relationship("Activity", secondary="businesses")
 
     def __init__(self, username, email, password):
         self.username = username
@@ -38,12 +41,14 @@ class User(db.Model):
 class Business(db.Model):
     __tablename__ = 'businesses'
     id = db.Column(db.Integer, primary_key=True)
-    businessname = db.Column(db.String(80))
+    businessname = db.Column(db.String(20))
     address = db.Column(db.String(120))
-    info = db.Column(db.String(120))
+    info = db.Column(db.String(200))
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
+
+    activities = relationship("Activity", secondary="users")
 
     def __init__(self, businessname, address, info):
         self.businessname = businessname
@@ -66,6 +71,7 @@ class Business(db.Model):
 class Activity(db.Model):
     __tablename__ = 'activities'
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     type = db.Column(db.String(80))
     description = db.Column(db.String(120))
     credit_cost = db.Column(db.Integer)
@@ -74,6 +80,9 @@ class Activity(db.Model):
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
+
+    user = relationship(User)
+    business = relationship(Business)
 
     def __init__(self, type, description, credit_cost, availability, capacity):
         self.type = type

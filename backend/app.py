@@ -61,17 +61,17 @@ def destroy(id):
         db.session.commit()
         return {'success': 202}
 
-# This one updates but doesnt persist, work needed!!!!
-
-
+#Method to update user
 @app.patch('/users/<int:id>')
 def update_user(id):
-    user = User.query.get(id)
-    data = request.form
-    if User:
-        user = User(data['username'], data['email'], data['id'])
-        db.session.commit()
-        return jsonify(user.to_dict()), 201
+    user = User.query.get_or_404(id)
+    user.username = request.form['username']
+    user.email = request.form['email']
+    user.password = request.form['password']
+    db.session.commit()
+    return jsonify(user.to_dict()), 201
+
+
 
 # Get a list of all businesses
 
@@ -126,11 +126,10 @@ def all_activities():
     return jsonify({'activities': [activity.to_dict() for activity in activity]})
 
 # Create a new activity by POST request
-
-
+#make sure to post as raw in postmate, otherwise it doesn't work
 @app.post('/activities')
 def activity():
-    data = request.form
+    data = request.json
     activity = Activity(data['type'], data['description'],
                         data['credit_cost'], data['availability'], data['capacity'])
     print(data)

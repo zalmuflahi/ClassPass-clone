@@ -1,6 +1,10 @@
 {
   "dependencies": {
+
+    "react-rating-stars-component": "^2.2.0",
+    "react-star-rating-component": "^1.4.1
     "gapi-script": "^1.2.0",
     "react-google-login": "^5.2.2"
+
   }
 }

@@ -12,7 +12,7 @@ const Header = ({userObj, setUserObj, credits, setCredits}) => {
     };
     const onFailure = (err) => {
         console.log('failed:', err);
-    }
+    } 
 
 
     return(

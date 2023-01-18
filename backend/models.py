@@ -18,7 +18,7 @@ class User(db.Model):
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
-    activities = relationship("Activity", secondary="businesses")
+    businesses = relationship("Business", overlaps="businesses", secondary="activities")
 
     def __init__(self, username, email, password):
         self.username = username
@@ -28,6 +28,8 @@ class User(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
+            'user_id': self.user_id,
+            'business_id': self.businesses_id,
             'username': self.username,
             'email': self.email
         }
@@ -48,7 +50,7 @@ class Business(db.Model):
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
-    activities = relationship("Activity", secondary="users")
+    users = relationship("User", overlaps="businesses", secondary="activities")
 
     def __init__(self, businessname, address, info):
         self.businessname = businessname
@@ -71,7 +73,8 @@ class Business(db.Model):
 class Activity(db.Model):
     __tablename__ = 'activities'
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    business_id = db.Column(db.Integer, db.ForeignKey('businesses.id'))
     type = db.Column(db.String(80))
     description = db.Column(db.String(120))
     credit_cost = db.Column(db.Integer)
@@ -81,10 +84,12 @@ class Activity(db.Model):
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
-    user = relationship(User)
-    business = relationship(Business)
+    user = relationship(User, overlaps="businesses,users")
+    business = relationship(Business, overlaps="businesses, users")
 
-    def __init__(self, type, description, credit_cost, availability, capacity):
+    def __init__(self,user_id, business_id, type, description, credit_cost, availability, capacity):
+        self.user_id = user_id
+        self.business_id = business_id
         self.type = type
         self.description = description
         self.credit_cost = credit_cost

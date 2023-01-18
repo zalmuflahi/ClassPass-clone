@@ -3,6 +3,7 @@ const Reviews = () => {
     const handleOnSubmit = (e) => {
         e.preventDefault()
         console.log('submitted')
+        console.log('just writing this so I have changes to commit')
 
         const postReview = async () => {
             let req = await fetch("http://localhost:5173/reviews", {

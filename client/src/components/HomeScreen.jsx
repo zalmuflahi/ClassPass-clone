@@ -1,6 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
-import CarouselItem from './CarouselItem';
 import { useState, useEffect } from 'react'
+import { useLinkClickHandler } from 'react-router-dom';
+import { useNavigate } from "react-router-dom"
 
 const HomeScreen = () => {
     const [gyms, setGyms] = useState([])
@@ -15,12 +16,12 @@ const HomeScreen = () => {
         request();
     }, []);
 
+    const navigate = useNavigate()
 
-    const images = ['https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/evz5icjwo0hctbxc8yys.jpg',
-        'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/ym00yzc9mwaxskhbp0xo.jpg',
-        'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/cgs7gqb0hheq9uwkdgd1.jpg']
+    const clickHandler = (gym) => {
+        navigate(`/BusinessPage/${gym.id}`)
+    }
     
-    // Add get request for all businesses
 
     return(
         <div className="mainComponents">
@@ -35,6 +36,7 @@ const HomeScreen = () => {
                                     className="d-block w-100"
                                     src={gym.picture}
                                     alt={gym.businessname}
+                                    onClik={()=>{clickHandler(gym)}}
                                 />
                                 <Carousel.Caption>
                                     <h3>{gym.name}</h3>

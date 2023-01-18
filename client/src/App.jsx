@@ -9,32 +9,18 @@ import "./App.css"
 
 function App() {
 
-  //   const router = createBrowserRouter([
-  //   {
-  //   path: "/", 
-  //     element: <HomeScreen  />,
-  //   },
-  //   {
-  //     path: "/Login",
-  //     element: <Login />,
-  //   },
-  //   {
-  //     path: "/BusinessPage",
-  //     element: <BusinessPage />,
-  //   },
-  // ])
+  const [userObj, setUserObj] = useState(null)
 
 return (
   <div className="App">
     <BrowserRouter>      
-      <Header />
+      <Header userObj={userObj} />
         <Routes>
                 
             <Route path={'/'} element={<HomeScreen />} />
-            <Route path={'/Login'} element={<Login />} />
+            <Route path={'/Login'} element={<Login userObj={userObj} setUserObj={setUserObj}/>} />
             <Route path={'/BusinessPage'} element={<BusinessPage />} />
           
-
         </Routes>
       {/* <Footer /> */}
     </BrowserRouter>

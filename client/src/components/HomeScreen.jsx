@@ -4,7 +4,10 @@ const HomeScreen = () => {
     const images = ['https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto/ah6gk5dv88gv6cryl7jl.jpg',
         'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/zruefsw4okc5wwlashui.jpg',
         'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/qh2p1nz3xys9h41m74ty.jpg']
-    return(
+
+    // Add get request for index of businesses
+
+        return(
         <div className="mainComponents">
             <div className="HomeScreen">
                 Homescreen

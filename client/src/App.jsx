@@ -6,10 +6,15 @@ import HomeScreen from './components/HomeScreen.jsx'
 import BusinessPage from './components/BusinessPage.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import "./App.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 function App() {
   const [credits, setCredits] = useState(200)
   const [userObj, setUserObj] = useState(null)
+
+  // get request for user by email probably, setCredits to user.credits
 
   useEffect(()=>{
     if (userObj){

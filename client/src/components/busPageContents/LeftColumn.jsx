@@ -7,15 +7,17 @@ const LeftColumn = ({ business }) => {
     // const [isScheduled, setIsScheduled] = useState(false);
     // const [scheduleErr, setScheduleErr] = useState('');
 
+
     let gymDescription = business.info
     let gymName = business.businessname
     let gymArea = business.address
     let gymRating = business.rating
 
+
     return (
         <div id="left side column" className="flex-block w-1/2 pb-500">
             <div id="image container" className="aspect-[5/3] overflow-hidden rounded-md">
-                <img className=" hover:scale-105 transition ease-in-out" src="https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto/psh7k9ugxtuvhviozoxw.jpg"></img>
+                <img className=" hover:scale-105 transition ease-in-out" src={gymImage}></img>
             </div>
             <div className="pt-5 pb-5">
                 <h1 className="text-4xl font-black pb-3">{gymName} - {gymArea}</h1>

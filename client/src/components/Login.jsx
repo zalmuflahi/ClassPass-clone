@@ -23,6 +23,7 @@ const Login = ({ userObj, setUserObj }) =>{
         console.log('success:', res);
         setUserObj(res.profileObj);
         console.log(res)
+        // add a post request for users if they are new
         navigate("/")
         console.log(res.profileObj.imageUrl)
     }

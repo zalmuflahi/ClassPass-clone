@@ -14,7 +14,7 @@ function App() {
 return (
   <div className="App">
     <BrowserRouter>      
-      <Header userObj={userObj} />
+      <Header userObj={userObj} setUserObj={setUserObj} />
         <Routes>
                 
             <Route path={'/'} element={<HomeScreen />} />

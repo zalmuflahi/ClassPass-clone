@@ -11,33 +11,33 @@ migrate = Migrate(db)
 class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
+    name = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(120), nullable=False)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
     businesses = relationship("Business", overlaps="businesses", secondary="activities")
 
-    def __init__(self, username, email, password):
-        self.username = username
+    def __init__(self, name, email):
+        self.name = name
         self.email = email
-        self.password = password
     
     def to_dict(self):
         return {
             'id': self.id,
-            'username': self.username,
+            'name': self.name,
             'email': self.email
         }
 
     def to_dict2(self):
         return {
             'id': self.id,
-            'username': self.username,
+            'name': self.name,
             'email': self.email,
-            'activities': [activity.to_dict() for activity in Activity.query.filter_by(user_id=self.id)]
+            'activities': [activity.to_dict() for activity in Activity.query.filter_by(user_id=self.id)],
+            'reviews': [reviews.to_dict() for reviews in Review.query.filter_by(user_id=self.id)],
+            'credits': [credit.to_dict() for credit in Credit.query.filter_by(user_id=self.id)]
         }
 
     def __repr__(self):
@@ -52,23 +52,29 @@ class Business(db.Model):
     businessname = db.Column(db.String(20))
     address = db.Column(db.String(120))
     info = db.Column(db.String(200))
+    picture = db.Column(db.String(500))
+    neighborhood = db.Column(db.String(30))
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
     users = relationship("User", overlaps="businesses", secondary="activities")
 
-    def __init__(self, businessname, address, info):
+    def __init__(self, businessname, address, info, picture, neighborhood):
         self.businessname = businessname
         self.address = address
         self.info = info
+        self.picture = picture
+        self.neighborhood = neighborhood
 
     def to_dict(self):
         return {
             'id': self.id,
             'businessname': self.businessname,
             'address': self.address,
-            'info': self.info
+            'info': self.info,
+            'picture': self.picture,
+            'neighborhood': self.neighborhood
         }
 
     def to_dict2(self):
@@ -77,7 +83,9 @@ class Business(db.Model):
             'businessname': self.businessname,
             'address': self.address,
             'info': self.info,
-            'activities': [activity.to_dict() for activity in Activity.query.filter_by(business_id=self.id)]
+            'picture': self.picture,
+            'activities': [activity.to_dict() for activity in Activity.query.filter_by(business_id=self.id)],
+            'reviews': [reviews.to_dict() for reviews in Review.query.filter_by(business_id=self.id)]
         }
 
     def __repr__(self):
@@ -132,6 +140,8 @@ class Activity(db.Model):
 class Review(db.Model):
     __tablename__ = 'reviews'
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    business_id = db.Column(db.Integer, db.ForeignKey('businesses.id'))
     title = db.Column(db.String(80), unique=True, nullable=False)
     content = db.Column(db.String(120), unique=True, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
@@ -139,7 +149,9 @@ class Review(db.Model):
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
-    def __init__(self, title, content, rating):
+    def __init__(self, user_id, business_id, title, content, rating):
+        self.user_id = user_id
+        self.business_id = business_id
         self.title = title
         self.content = content
         self.rating = rating
@@ -147,10 +159,36 @@ class Review(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
+            'user_id': self.user_id,
+            'business_id': self.business_id,
             'title': self.title,
             'content': self.content,
             'rating': self.rating
         }
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<Review %r>' % self.title
+
+#Credits Tables 
+class Credit(db.Model):
+    __tablename__ = 'credits'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    business_id = db.Column(db.Integer, db.ForeignKey('businesses.id'))
+    amount = db.Column(db.Integer, default=0)
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+    updated_at = db.Column(
+        db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
+
+    def __init__(self, amount, user_id, business_id):
+        self.amount = amount
+        self.user_id = user_id
+        self.business_id = business_id
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'business_id': self.business_id,
+            'amount': self.amount
+        }

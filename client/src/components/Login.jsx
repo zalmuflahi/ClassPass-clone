@@ -8,7 +8,6 @@ const Login = ({ userObj, setUserObj }) =>{
     const navigate = useNavigate()
 
     const clientId = import.meta.env.VITE_API_G_CLIENT_ID
-    // const apiKey = import.meta.env.VITE_API_KEY_GAPI
 
     useEffect(() => {
         const initClient = () => {
@@ -34,16 +33,25 @@ const Login = ({ userObj, setUserObj }) =>{
     return(
         <div className="mainComponents">
             <div className="loginContainer">
-                <div className=" align-middle bg-white w-1/2 h-1/2 rounded-lg flex items-center justify-center">
-                    {/* <h1>Sign up and get 50 free credits!</h1> */}
-                    <GoogleLogin
-                        clientId={clientId}
-                        buttonText="Sign in with Google"
-                        onSuccess={onSuccess}
-                        onFailure={onFailure}
-                        cookiePolicy={'single_host_origin'}
-                        isSignedIn={true}
-                    />
+                <div className=" align-middle bg-white drop-shadow-md hover:drop-shadow-xl transition ease-in-out h-2/3 aspect-[4/5] rounded-lg flex items-center justify-center">
+                    <div className="flex-col flex items-center justify-center  space-y-4  mx-10">
+                        <h1 className="font-black text-4xl text-center">One app for all things fitness, wellness & beauty</h1>
+                        <p className="text-center" >ClassPass gives you worldwide access to thousands of top-rated gyms, fitness studios, salons and spas.</p>
+                        <bl></bl>
+
+                        <div className="px-2"><div className="bg-blue-600 text-center text-white font-semibold rounded-full py-2 px-5">Sign up for<br></br>200 Free Credits!</div></div>
+                     
+                        <GoogleLogin
+                            clientId={clientId}
+                            buttonText="Sign in with Google"
+                            onSuccess={onSuccess}
+                            onFailure={onFailure}
+                            cookiePolicy={'single_host_origin'}
+                            isSignedIn={true}
+                        />
+                        <bl></bl>
+                        <p className="text-center text-sm">*This app is only for aspiring influencers with commitment problems and people that pay $300 for haircuts. No poors.*</p>
+                    </div>
                 </div>
             </div>
         </div>

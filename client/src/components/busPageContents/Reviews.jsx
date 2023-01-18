@@ -1,8 +1,24 @@
 const Reviews = () => {
+
+    const handleOnSubmit = (e) => {
+        e.preventDefault()
+        console.log('submitted')
+
+        const postReview = async () => {
+            let req = await fetch("http://localhost:5173/reviews", {
+                method: 'POST', 
+                headers: {'Content-Type': 'application/json'}, 
+                body: {}
+            })
+            
+        }
+        postReview()
+    }
+
     return(
         <div>
             <div>
-                <form>Leave a Review! 
+                <form onSubmit={handleOnSubmit}>
                     <br/>
                     <label>First Name: </label> 
                     <input type='text' name='first-name'/>
@@ -16,10 +32,8 @@ const Reviews = () => {
                     <button>Submit</button>
                 </form> 
             </div>
-            <div> Prior Reviews: 
-            </div>  
         </div>
     )
 }  
 
-export default Reviews
+export default Reviews 

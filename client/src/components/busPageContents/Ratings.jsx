@@ -20,7 +20,7 @@ class Ratings extends React.Component {
 
         return (
             <div>
-                <h2>Rating from state: {rating}</h2>
+                <h2>{rating}</h2>
                 <StarRatingComponent
                     name="rate1"
                     starCount={5}

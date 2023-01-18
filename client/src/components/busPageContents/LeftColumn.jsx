@@ -17,7 +17,7 @@ const LeftColumn = ({ business }) => {
     return (
         <div id="left side column" className="flex-block w-1/2 pb-500">
             <div id="image container" className="aspect-[5/3] overflow-hidden rounded-md">
-                <img className=" hover:scale-105 transition ease-in-out" src={gymImage}></img>
+                <img className=" hover:scale-105 transition ease-in-out" src={business.picture}></img>
             </div>
             <div className="pt-5 pb-5">
                 <h1 className="text-4xl font-black pb-3">{gymName} - {gymArea}</h1>

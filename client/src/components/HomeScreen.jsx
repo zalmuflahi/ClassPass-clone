@@ -1,17 +1,16 @@
 import Carousel from 'react-bootstrap/Carousel';
 
 const HomeScreen = () => {
-    const images = ['https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto/ah6gk5dv88gv6cryl7jl.jpg',
-        'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/zruefsw4okc5wwlashui.jpg',
-        'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/qh2p1nz3xys9h41m74ty.jpg']
+    const images = ['https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/evz5icjwo0hctbxc8yys.jpg',
+        'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/ym00yzc9mwaxskhbp0xo.jpg',
+        'https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/cgs7gqb0hheq9uwkdgd1.jpg']
 
     // Add get request for index of businesses
 
         return(
         <div className="mainComponents">
             <div className="HomeScreen">
-                Homescreen
-                <Carousel>
+                <Carousel className="p-6">
                     <Carousel.Item>
                         <img
                             className="d-block w-100"

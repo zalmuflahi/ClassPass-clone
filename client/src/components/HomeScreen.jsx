@@ -37,8 +37,8 @@ const HomeScreen = () => {
                                     onClick={()=>{clickHandler(gym)}}
                                 />
                                 <Carousel.Caption>
-                                    <h3>{gym.name}</h3>
-                                    <p>{gym.info}</p>
+                                    <h3 className="titleTextShadow">{gym.businessname}</h3>
+                                    <p className="textShadow">{gym.info}</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         )

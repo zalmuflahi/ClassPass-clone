@@ -25,7 +25,6 @@ console.log(id)
             <div className="pt-4 pr-4 pl-4 pb-50 mb-200 mx-10 flex space-x-4 w-4/5 flex justify-center h-screen">
                 <LeftColumn business={business}/>
                 <RightColumn business={business}/>
-                <Reviews business={business} />
             </div>
 
 

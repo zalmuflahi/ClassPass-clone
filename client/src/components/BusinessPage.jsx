@@ -26,7 +26,7 @@ console.log(id)
                 <RightColumn business={business}/>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

@@ -33,7 +33,7 @@ const LeftColumn = ({ business }) => {
             </div>
                 <hr></hr>
             <div className="py-3">
-                <h1 className="text-2xl font-bold pb-2">{gymName} Reviews</h1>
+                {/* <h1 className="text-2xl font-bold pb-2">{gymName} Reviews</h1> */}
                
                             {/* <p>{reviews.content}</p> */}
                             

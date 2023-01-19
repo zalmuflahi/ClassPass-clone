@@ -19,8 +19,8 @@ class Ratings extends React.Component {
         const { rating } = this.state;
 
         return (
-            <div>
-                <h2>{rating}</h2>
+            <div className="flex items-center">
+                <h2 className="px-2">{rating}/5</h2>
                 <StarRatingComponent
                     name="rate1"
                     starCount={5}

@@ -43,7 +43,7 @@ def show(id):
 
 @app.post('/users')
 def users():
-    data = request.form
+    data = request.json
     user = User(data['username'], data['email'], data['password'])
     print(data)
     db.session.add(user)
@@ -65,9 +65,9 @@ def destroy(id):
 @app.patch('/users/<int:id>')
 def update_user(id):
     user = User.query.get_or_404(id)
-    user.username = request.form['username']
-    user.email = request.form['email']
-    user.password = request.form['password']
+    user.username = request.json['username']
+    user.email = request.json['email']
+    user.password = request.json['password']
     db.session.commit()
     return jsonify(user.to_dict()), 201
 
@@ -97,7 +97,7 @@ def show_business(id):
 
 @app.post('/business')
 def business():
-    data = request.form
+    data = request.json
     business = Business(data['businessname'], data['address'], data['info'])
     print(data)
     db.session.add(business)
@@ -161,7 +161,7 @@ def all_reviews():
 
 @app.post('/reviews')
 def review():
-    data = request.form
+    data = request.json
     review = Review(data['title'], data['content'], data['rating'])
     print(data)
     db.session.add(review)

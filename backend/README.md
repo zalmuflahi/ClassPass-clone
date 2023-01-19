@@ -3,7 +3,7 @@ flask db --help
 flask db init
 flask db current
 flask db upgrade
-flask db downgrade
+
 ```
 
 ## Database Workflow

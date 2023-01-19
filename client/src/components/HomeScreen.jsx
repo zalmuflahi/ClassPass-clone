@@ -36,7 +36,7 @@ const HomeScreen = () => {
                                     className="d-block w-100"
                                     src={gym.picture}
                                     alt={gym.businessname}
-                                    onClik={()=>{clickHandler(gym)}}
+                                    onClick={()=>{clickHandler(gym)}}
                                 />
                                 <Carousel.Caption>
                                     <h3>{gym.name}</h3>

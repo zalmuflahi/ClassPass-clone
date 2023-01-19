@@ -1,8 +1,12 @@
 
 const RightColumn = ({business}) => {
     const GAPIkey = import.meta.env.VITE_API_KEY_GAPI
-    //let formatedAddress = business.address.replace(/,/g, "").split(" ").join("+")
-    //console.log(formatedAddress)
+    const address = business.address 
+    // console.log(address)
+    // let formatedAddress
+    // if (address.contains(',')) {
+    //     formatedAddress = address.replace(/,/g, "").split(" ").join("+")
+    // }
 
     return(
         <div id="right side column" className="flex-block w-1/4 break-all">

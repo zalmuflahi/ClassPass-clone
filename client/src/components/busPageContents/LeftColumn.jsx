@@ -4,14 +4,10 @@ import Ratings from './Ratings'
 import Reviews from './Reviews'
 
 const LeftColumn = ({ business }) => {
-    // const [isScheduling, setIsScheduling] = useState(false);
-    // const [isScheduled, setIsScheduled] = useState(false);
-    // const [scheduleErr, setScheduleErr] = useState('');
-
 
     let gymDescription = business.info
     let gymName = business.businessname
-    let gymArea = business.address
+    let gymArea = business.neighborhood
     let gymRating = business.rating
 
 
@@ -20,10 +16,12 @@ const LeftColumn = ({ business }) => {
             <div id="image container" className="aspect-[5/3] overflow-hidden rounded-md">
                 <img className=" hover:scale-105 transition ease-in-out" src={business.picture}></img>
             </div>
-            <div className="pt-5 pb-5">
+            <div className="pt-3 pb-3">
                 <h1 className="text-4xl font-black pb-3">{gymName} - {gymArea}</h1>
-                <h3 className="text-xl font-semibold pb-2 ">Rating</h3>
-                <Ratings/>
+                <div className="flex items-center">
+                    <h3 className="text-xl font-semibold pb-2 ">Rating</h3>
+                    <Ratings/>
+                </div>
                 <p className="font-thin">{gymDescription}</p>
             </div>
                 <hr></hr>

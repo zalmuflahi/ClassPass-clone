@@ -10,7 +10,7 @@ class Ratings extends React.Component {
         };
     }
 
-    onStarClick(nextValue, prevValue, name) {
+    onStarClick(nextValue) {
         this.setState({ rating: nextValue });
     }
 
@@ -18,8 +18,8 @@ class Ratings extends React.Component {
         const { rating } = this.state;
 
         return (
-            <div className="flex items-center">
-                <h2 className="px-2">{rating}/5</h2>
+            <div>
+                <h2>{rating}</h2>
                 <StarRatingComponent
                     name="rate1"
                     starCount={5}

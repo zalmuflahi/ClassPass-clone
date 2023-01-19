@@ -6,14 +6,12 @@ import { useParams } from "react-router-dom"
 const BusinessPage = () => {
     const [business, setBusiness] = useState([])
     const { id } = useParams()
-    console.log(id)
 
     useEffect(() => {
         const request = async () => {
             let req = await fetch(`http://127.0.0.1:3000/business/${id}`);
             let res = await req.json();
             setBusiness(res);
-            console.log(res)
         }
         request();
     }, []);

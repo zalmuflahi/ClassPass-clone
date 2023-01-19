@@ -9,7 +9,6 @@ const HomeScreen = () => {
             let req = await fetch('http://127.0.0.1:3000/business');
             let res = await req.json();
             setGyms(res.businesses);
-            console.log(res.businesses)
         }
         request();
     }, []);

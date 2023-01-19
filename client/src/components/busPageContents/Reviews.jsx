@@ -1,5 +1,5 @@
-const Reviews = ({business}) => {
-    return(
+const Reviews = ({ business }) => { 
+    return (
         <div>
             <h1>Reviews: </h1>
             {
@@ -9,7 +9,7 @@ const Reviews = ({business}) => {
                     )
                 })
             }
-        </div>
+            </div>
     )
 }
 

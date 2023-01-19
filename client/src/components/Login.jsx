@@ -36,7 +36,7 @@ const Login = ({ userObj, setUserObj }) => {
                         <h1 className="font-black text-4xl text-center">One app for all things fitness, wellness & beauty</h1>
                         <p className="text-center" >ClassPass gives you worldwide access to thousands of top-rated gyms, fitness studios, salons and spas.</p>
                         <bl></bl>
-                        <div className="px-2"><div className="bg-blue-600 text-center text-white font-semibold rounded-full py-2 px-5">Sign up for<br></br>200 Free Credits!</div></div>
+                        <div className="px-2"><div className="bg-blue-600 text-center text-white font-semibold rounded-full py-2 px-5" onClick={() => navigate('/signup')}>Sign up for<br></br>200 Free Credits!</div></div>
                         <GoogleLogin
                             clientId={clientId}
                             buttonText="Sign in with Google"

@@ -16,7 +16,6 @@ function App() {
     let request = async () => {
       let req = await fetch('http://127.0.0.1:3000/business')
       let res = await req.json()
-      console.log(res)
       setBus(res)
     }
     request()

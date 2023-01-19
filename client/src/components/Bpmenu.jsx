@@ -16,5 +16,4 @@ function Bpmenu({ bus }) {
     </div>
   )
 }
-
 export default Bpmenu

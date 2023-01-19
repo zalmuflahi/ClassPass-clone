@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import { GoogleLogout } from 'react-google-login';
 
-
 const Header = ({userObj, setUserObj, credits, setCredits}) => {
     const clientId = import.meta.env.VITE_API_G_CLIENT_ID
     const navigate = useNavigate()
@@ -13,8 +12,6 @@ const Header = ({userObj, setUserObj, credits, setCredits}) => {
     const onFailure = (err) => {
         console.log('failed:', err);
     } 
-
-
     return(
         <div className = "headerContainer">
             <Link className="h-4/5 ratio-auto" to="/">

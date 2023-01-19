@@ -7,5 +7,4 @@ function BpCard({ busi }) {
         </div>
     )
 }
-
 export default BpCard

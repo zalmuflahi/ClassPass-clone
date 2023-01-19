@@ -4,10 +4,6 @@ import Ratings from './Ratings'
 import Reviews from './Reviews'
 
 const LeftColumn = ({ business }) => {
-    // const [isScheduling, setIsScheduling] = useState(false);
-    // const [isScheduled, setIsScheduled] = useState(false);
-    // const [scheduleErr, setScheduleErr] = useState('');
-
 
     let gymDescription = business.info
     let gymName = business.businessname

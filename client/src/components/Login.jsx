@@ -3,10 +3,8 @@ import { GoogleLogin } from 'react-google-login';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-
 const Login = ({ userObj, setUserObj }) =>{
     const navigate = useNavigate()
-
     const clientId = import.meta.env.VITE_API_G_CLIENT_ID
 
     useEffect(() => {
@@ -23,7 +21,6 @@ const Login = ({ userObj, setUserObj }) =>{
         console.log('success:', res);
         setUserObj(res.profileObj);
         console.log(res)
-        // add a post request for users if they are new
         navigate("/")
         console.log(res.profileObj.imageUrl)
     }

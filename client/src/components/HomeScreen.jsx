@@ -1,11 +1,9 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { useState, useEffect } from 'react'
-import { useLinkClickHandler } from 'react-router-dom';
 import { useNavigate } from "react-router-dom"
 
 const HomeScreen = () => {
-    const [gyms, setGyms] = useState([])
-
+const [gyms, setGyms] = useState([])
     useEffect(() => {
         const request = async () => {
             let req = await fetch('http://127.0.0.1:3000/business');
@@ -15,24 +13,20 @@ const HomeScreen = () => {
         }
         request();
     }, []);
-
     const navigate = useNavigate()
-
     const clickHandler = (gym) => {
         navigate(`/BusinessPage/${gym.id}`)
     }
-    
-
     return(
         <div className="mainComponents">
             <div className="HomeScreen">
-                <Carousel className="p-6">
-                    
-                      
-                    {gyms.map((gym)=>{
+                <Carousel className="p-6">     
+                    {
+                      gyms.map((gym)=>{
                         return(
                             <Carousel.Item>
-                                <img
+                                <img 
+                                    key="gym images and names"
                                     className="d-block w-100"
                                     src={gym.picture}
                                     alt={gym.businessname}
@@ -45,8 +39,7 @@ const HomeScreen = () => {
                             </Carousel.Item>
                         )
                         })
-                    }
-                    
+                    } 
                 </Carousel>
             </div>
         </div>

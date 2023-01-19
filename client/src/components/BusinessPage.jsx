@@ -1,6 +1,5 @@
 import LeftColumn from "./busPageContents/LeftColumn"
 import RightColumn from "./busPageContents/RightColumn"
-import Footer from "./Footer"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 
@@ -25,8 +24,6 @@ console.log(id)
                 <LeftColumn business={business}/>
                 <RightColumn business={business}/>
             </div>
-
-            <Footer />
         </div>
     )
 }

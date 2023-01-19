@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import { GoogleLogout } from 'react-google-login';
 
-const Header = ({ userObj, setUserObj, credits, setCredits }) => {
+const Header = ({ userObj, setUserObj, credits}) => {
     const clientId = import.meta.env.VITE_API_G_CLIENT_ID
     const navigate = useNavigate()
 

@@ -3,7 +3,7 @@ import { GoogleLogin } from 'react-google-login';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-const Login = ({ userObj, setUserObj }) => {
+const Login = ({ setUserObj }) => {
     const navigate = useNavigate()
     const clientId = import.meta.env.VITE_API_G_CLIENT_ID
 

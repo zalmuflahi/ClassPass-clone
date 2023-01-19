@@ -11,11 +11,9 @@ const ReviewForm = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: {}
             })
-
         }
         postReview()
     }
-
     return (
         <div>
             <div>

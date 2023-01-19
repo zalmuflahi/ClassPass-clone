@@ -1,5 +1,4 @@
 import Calendar from './Calendar'
-import ReviewForm from './ReviewForm'
 import Ratings from './Ratings'
 import Reviews from './Reviews'
 
@@ -8,7 +7,6 @@ const LeftColumn = ({ business }) => {
     let gymDescription = business.info
     let gymName = business.businessname
     let gymArea = business.neighborhood
-    let gymRating = business.rating
 
     return (
         <div id="left side column" className="flex-block w-1/2 pb-500">
@@ -18,7 +16,6 @@ const LeftColumn = ({ business }) => {
             <div className="py-3">
                 <h1 className="text-4xl font-black pb-2">{gymName} - {gymArea}</h1>
                 <a href="#reviewElement" className="flex items-center">
-                    {/* <h3 className="text-xl font-semibold ">Rating</h3> */}
                     <Ratings  />
                 </a>
                 <p className="font-thin">{gymDescription}</p>
@@ -37,6 +34,5 @@ const LeftColumn = ({ business }) => {
         </div>
     )
 }
-
 
 export default LeftColumn

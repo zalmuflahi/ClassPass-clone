@@ -9,6 +9,8 @@ const LeftColumn = ({ business }) => {
     let gymName = business.businessname
     let gymArea = business.neighborhood
     let gymRating = business.rating
+    // let reviews = business.reviews[0] 
+    // console.log(reviews)
 
 
     return (
@@ -32,8 +34,9 @@ const LeftColumn = ({ business }) => {
                 <hr></hr>
             <div className="py-3">
                 <h1 className="text-2xl font-bold pb-2">{gymName} Reviews</h1>
-                <Reviews/>
-                <ReviewForm/> 
+               
+                            {/* <p>{reviews.content}</p> */}
+                            
             </div>
                 <hr></hr>
         </div>

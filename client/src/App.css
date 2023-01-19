@@ -60,3 +60,18 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+.textShadow {
+    color: white;
+    line-height: normal;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+}
+
+.titleTextShadow {
+    color: white;
+    /* line-height: normal; */
+    font-weight: 700;
+    font-size: large;
+    padding-bottom: .4em;
+    ;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}

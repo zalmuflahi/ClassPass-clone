@@ -17,20 +17,20 @@ const LeftColumn = ({ business }) => {
             </div>
             <div className="py-3">
                 <h1 className="text-4xl font-black pb-2">{gymName} - {gymArea}</h1>
-                <div className="flex items-center">
-                    <h3 className="text-xl font-semibold pb-2 ">Rating</h3>
-                    <Ratings/>
-                </div>
+                <a href="#reviewElement" className="flex items-center">
+                    {/* <h3 className="text-xl font-semibold ">Rating</h3> */}
+                    <Ratings  />
+                </a>
                 <p className="font-thin">{gymDescription}</p>
             </div>
                 <hr></hr>
-            <div className="py-3">
+            <div className="pt-3">
                 <h1 className="text-2xl font-bold">Schedule</h1>
                 <Calendar/> 
             </div>
                 <hr></hr>
             <div className="py-3">
-                <h1 className="text-2xl font-bold pb-2">{gymName} Reviews</h1>
+                <h1 id="reviewElement" className="text-2xl font-bold pb-2">{gymName} Reviews</h1>
                 <Reviews business={business} />
             </div>
                 <hr></hr>

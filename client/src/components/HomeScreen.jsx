@@ -19,24 +19,22 @@ const HomeScreen = () => {
     return (
         <div className="mainComponents">
             <div className="HomeScreen">
-                <Carousel className="p-6">
-                    {
-                        gyms.map((gym) => {
-                            return (
-                                <Carousel.Item>
-                                    <img
-                                        key="gym images and names"
-                                        className="d-block w-100"
-                                        src={gym.picture}
-                                        alt={gym.businessname}
-                                        onClick={() => { clickHandler(gym) }}
-                                    />
-                                    <Carousel.Caption>
-                                        <h3>{gym.name}</h3>
-                                        <p>{gym.info}</p>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                            )
+                <Carousel className="p-6">                      
+                    {gyms.map((gym)=>{
+                        return(
+                            <Carousel.Item>
+                                <img
+                                    className=" w-100"
+                                    src={gym.picture}
+                                    alt={gym.businessname}
+                                    onClick={()=>{clickHandler(gym)}}
+                                />
+                                <Carousel.Caption>
+                                    <h3 className="titleTextShadow">{gym.businessname}</h3>
+                                    <p className="textShadow">{gym.info}</p>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                        )
                         })
                     }
                 </Carousel>

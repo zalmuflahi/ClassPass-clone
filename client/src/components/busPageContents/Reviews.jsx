@@ -1,11 +1,19 @@
-const Reviews = ({ business }) => { 
-    return (
+import StarRatingComponent from 'react-star-rating-component';
+const Reviews = ({business}) => {
+    return(
         <div>
-            <h1>Reviews: </h1>
             {
                 business.reviews?.map((review) => {
                     return(
-                        <p key={review.id} >{review.content}</p>
+                        <div>
+                            <h1 className="text-l font-bold">{review.title}</h1>
+                            <StarRatingComponent
+                                name="rate1"
+                                starCount={5}
+                                value={review.rating}
+                            />
+                            <p key={review.id} >{review.content}</p>
+                        </div>
                     )
                 })
             }

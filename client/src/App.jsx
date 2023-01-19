@@ -7,23 +7,26 @@ import BusinessPage from './components/BusinessPage.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import "./App.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Bpmenu from './components/Bpmenu.jsx'
 
 
 
 function App() {
   const [credits, setCredits] = useState(200)
   const [userObj, setUserObj] = useState(null)
+  const [bus, setBus] = useState([])
 
   // get request for user by email probably, setCredits to user.credits
 
-  useEffect(()=>{
-    if (userObj){
-      setCredits(200)
+  useEffect(() => {
+    let request = async () => {
+      let req = await fetch(`http://127.0.0.1:3000/business`)
+      let res = await req.json()
+      console.log(res)
+      setBus(res)
     }
-    else {
-      setCredits(0)
-    }
-  },[userObj])
+    request()
+  }, [])
 
 return (
   <div className="App">
@@ -33,8 +36,8 @@ return (
                 
             <Route path={'/'} element={<HomeScreen />} />
             <Route path={'/Login'} element={<Login userObj={userObj} setUserObj={setUserObj}/>} />
-            <Route path={'/BusinessPage'} element={<BusinessPage />} />
-          
+            <Route path={'/BusinessPage/:id'} element={<BusinessPage />} />
+            <Route path={'/menu'} element={<Bpmenu bus={bus}/>} />
         </Routes>
       {/* <Footer /> */}
     </BrowserRouter>

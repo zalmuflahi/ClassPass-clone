@@ -21,8 +21,6 @@ const Header = ({userObj, setUserObj, credits, setCredits}) => {
                     <img className='h-full' src="https://53.fs1.hubspotusercontent-na1.net/hubfs/53/Fergals/Case%20Study%20Logos/ClassPass%20Logo.png" />
                 </Link>
             <div className="flex items-center" >
-                
-                <Link className="links" to="/BusinessPage">View Business</Link>
                 {userObj ? <div className="px-2"><div className="bg-blue-600 font-semibold rounded-full py-2 px-3">{credits} Credits</div></div> : null}
                 {userObj ? <div className="pr-4 pl-2"><GoogleLogout  clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} /></div> : <Link className="links" to="/Login">Login</Link> }
             </div>

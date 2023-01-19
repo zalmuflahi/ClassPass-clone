@@ -5,17 +5,13 @@ from sqlalchemy.orm import relationship
 db = SQLAlchemy()
 migrate = Migrate(db)
 
-# User Class here
-
-
 class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
-    updated_at = db.Column(
-        db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
+    updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
     businesses = relationship("Business", overlaps="businesses", secondary="activities")
 
@@ -43,9 +39,6 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
-# Business Class here
-
-
 class Business(db.Model):
     __tablename__ = 'businesses'
     id = db.Column(db.Integer, primary_key=True)
@@ -55,11 +48,9 @@ class Business(db.Model):
     picture = db.Column(db.String(500))
     neighborhood = db.Column(db.String(30))
     created_at = db.Column(db.DateTime, server_default=db.func.now())
-    updated_at = db.Column(
-        db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
+    updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
     users = relationship("User", overlaps="businesses", secondary="activities")
-
     def __init__(self, businessname, address, info, picture, neighborhood):
         self.businessname = businessname
         self.address = address
@@ -91,8 +82,6 @@ class Business(db.Model):
     def __repr__(self):
         return '<Business %r>' % self.businessname
 
-
-# Classes class? :p
 class Activity(db.Model):
     __tablename__ = 'activities'
     id = db.Column(db.Integer, primary_key=True)
@@ -104,8 +93,7 @@ class Activity(db.Model):
     availability = db.Column(db.Boolean, default=False, server_default="false")
     capacity = db.Column(db.Integer)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
-    updated_at = db.Column(
-        db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
+    updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
     user = relationship(User, overlaps="businesses,users")
     business = relationship(Business, overlaps="businesses, users")
@@ -134,9 +122,6 @@ class Activity(db.Model):
     def __repr__(self):
         return '<Activity %r>' % self.type
 
-# Reviews here
-
-
 class Review(db.Model):
     __tablename__ = 'reviews'
     id = db.Column(db.Integer, primary_key=True)
@@ -146,8 +131,7 @@ class Review(db.Model):
     content = db.Column(db.String(120), unique=True, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
-    updated_at = db.Column(
-        db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
+    updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
     def __init__(self, user_id, business_id, title, content, rating):
         self.user_id = user_id
@@ -169,7 +153,6 @@ class Review(db.Model):
     def __repr__(self):
         return '<Review %r>' % self.title
 
-#Credits Tables 
 class Credit(db.Model):
     __tablename__ = 'credits'
     id = db.Column(db.Integer, primary_key=True)
@@ -177,8 +160,7 @@ class Credit(db.Model):
     business_id = db.Column(db.Integer, db.ForeignKey('businesses.id'))
     amount = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
-    updated_at = db.Column(
-        db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
+    updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
     def __init__(self, amount, user_id, business_id):
         self.amount = amount

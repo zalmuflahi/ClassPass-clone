@@ -4,7 +4,6 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 from config import Config
 from models import db, User, Business, Activity, Review
-import platform
 
 app = Flask(__name__, static_folder='public')
 CORS(app, origins=['*'])

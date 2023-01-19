@@ -3,7 +3,7 @@ import { GoogleLogin } from 'react-google-login';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-const Login = ({ userObj, setUserObj }) =>{
+const Login = ({ userObj, setUserObj }) => {
     const navigate = useNavigate()
     const clientId = import.meta.env.VITE_API_G_CLIENT_ID
 
@@ -28,7 +28,7 @@ const Login = ({ userObj, setUserObj }) =>{
         console.log('failed:', err);
     };
 
-    return(
+    return (
         <div className="mainComponents">
             <div className="loginContainer">
                 <div className=" align-middle bg-white drop-shadow-md hover:drop-shadow-xl transition ease-in-out h-2/3 aspect-[4/5] rounded-lg flex items-center justify-center">
@@ -36,9 +36,7 @@ const Login = ({ userObj, setUserObj }) =>{
                         <h1 className="font-black text-4xl text-center">One app for all things fitness, wellness & beauty</h1>
                         <p className="text-center" >ClassPass gives you worldwide access to thousands of top-rated gyms, fitness studios, salons and spas.</p>
                         <bl></bl>
-
                         <div className="px-2"><div className="bg-blue-600 text-center text-white font-semibold rounded-full py-2 px-5">Sign up for<br></br>200 Free Credits!</div></div>
-                     
                         <GoogleLogin
                             clientId={clientId}
                             buttonText="Sign in with Google"

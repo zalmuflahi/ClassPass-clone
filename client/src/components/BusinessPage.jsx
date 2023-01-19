@@ -4,9 +4,9 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 
 const BusinessPage = () => {
-const [business, setBusiness] = useState([])
-const {id} = useParams()
-console.log(id)
+    const [business, setBusiness] = useState([])
+    const { id } = useParams()
+    console.log(id)
 
     useEffect(() => {
         const request = async () => {
@@ -18,11 +18,11 @@ console.log(id)
         request();
     }, []);
 
-    return(
+    return (
         <div className="mainComponents">
             <div className="pt-4 pr-4 pl-4 pb-50 mb-200 mx-10 flex space-x-4 w-4/5 flex justify-center h-screen">
-                <LeftColumn business={business}/>
-                <RightColumn business={business}/>
+                <LeftColumn business={business} />
+                <RightColumn business={business} />
             </div>
         </div>
     )

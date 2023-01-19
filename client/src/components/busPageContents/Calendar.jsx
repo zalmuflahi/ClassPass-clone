@@ -1,5 +1,5 @@
-import { useState } from 'react' 
-import DayTimePicker from '@mooncake-dev/react-day-time-picker' 
+import { useState } from 'react'
+import DayTimePicker from '@mooncake-dev/react-day-time-picker'
 
 const Calendar = () => {
     const [isScheduling, setIsScheduling] = useState(false);
@@ -8,11 +8,11 @@ const Calendar = () => {
 
     const handleScheduled = date => {
         setIsScheduling(true);
-        setScheduleErr(''); 
+        setScheduleErr('');
         setIsScheduling(false);
-        }
-        
-    return(
+    }
+
+    return (
         <DayTimePicker
             timeSlotSizeMinutes={15}
             isLoading={isScheduling}
@@ -21,5 +21,5 @@ const Calendar = () => {
             onConfirm={handleScheduled}
         />
     )
-}  
+}
 export default Calendar

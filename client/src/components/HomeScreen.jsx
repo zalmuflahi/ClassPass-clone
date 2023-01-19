@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 
 const HomeScreen = () => {
-const [gyms, setGyms] = useState([])
+    const [gyms, setGyms] = useState([])
     useEffect(() => {
         const request = async () => {
             let req = await fetch('http://127.0.0.1:3000/business');
@@ -17,29 +17,29 @@ const [gyms, setGyms] = useState([])
     const clickHandler = (gym) => {
         navigate(`/BusinessPage/${gym.id}`)
     }
-    return(
+    return (
         <div className="mainComponents">
             <div className="HomeScreen">
-                <Carousel className="p-6">     
+                <Carousel className="p-6">
                     {
-                      gyms.map((gym)=>{
-                        return(
-                            <Carousel.Item>
-                                <img 
-                                    key="gym images and names"
-                                    className="d-block w-100"
-                                    src={gym.picture}
-                                    alt={gym.businessname}
-                                    onClick={()=>{clickHandler(gym)}}
-                                />
-                                <Carousel.Caption>
-                                    <h3>{gym.name}</h3>
-                                    <p>{gym.info}</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        )
+                        gyms.map((gym) => {
+                            return (
+                                <Carousel.Item>
+                                    <img
+                                        key="gym images and names"
+                                        className="d-block w-100"
+                                        src={gym.picture}
+                                        alt={gym.businessname}
+                                        onClick={() => { clickHandler(gym) }}
+                                    />
+                                    <Carousel.Caption>
+                                        <h3>{gym.name}</h3>
+                                        <p>{gym.info}</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                            )
                         })
-                    } 
+                    }
                 </Carousel>
             </div>
         </div>

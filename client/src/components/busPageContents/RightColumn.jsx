@@ -1,9 +1,8 @@
-
-const RightColumn = ({business}) => {
+const RightColumn = ({ business }) => {
     const GAPIkey = import.meta.env.VITE_API_KEY_GAPI
-    const address = business.address 
+    const address = business.address
 
-    return(
+    return (
         <div id="right side column" className="flex-block w-1/4 break-all">
             <div>
                 <img className="w-full rounded-md" src={`https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn Bridge&zoom=12&size=400x400&key=${GAPIkey}`}></img>
@@ -25,7 +24,7 @@ const RightColumn = ({business}) => {
                     <img className="w-5 h-5" src="https://cdn-icons-png.flaticon.com/512/1077/1077041.png" />
                     <h1 className="break-all">Facebook</h1>
                 </a>
-                
+
             </div>
         </div>
     )

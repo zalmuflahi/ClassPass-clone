@@ -39,7 +39,7 @@ return (
             <Route path={'/BusinessPage/:id'} element={<BusinessPage />} />
             <Route path={'/menu'} element={<Bpmenu bus={bus}/>} />
         </Routes>
-      {/* <Footer /> */}
+       <Footer />
     </BrowserRouter>
   </div>
 )

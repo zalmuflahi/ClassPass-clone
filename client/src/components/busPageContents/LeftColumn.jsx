@@ -1,18 +1,20 @@
 import Calendar from './Calendar' 
 import ReviewForm from './ReviewForm' 
 import Ratings from './Ratings' 
-import Reviews from './Reviews'
+import Reviews from './Reviews' 
 
 const LeftColumn = ({ business }) => {
+
     // const [isScheduling, setIsScheduling] = useState(false);
     // const [isScheduled, setIsScheduled] = useState(false);
     // const [scheduleErr, setScheduleErr] = useState('');
 
-
+    const bus = business
     let gymDescription = business.info
     let gymName = business.businessname
     let gymArea = business.address
-    let gymRating = business.rating
+    let gymnei = business.neighborhood
+    
 
 
     return (
@@ -21,7 +23,7 @@ const LeftColumn = ({ business }) => {
                 <img className=" hover:scale-105 transition ease-in-out" src={business.picture}></img>
             </div>
             <div className="pt-5 pb-5">
-                <h1 className="text-4xl font-black pb-3">{gymName} - {gymArea}</h1>
+                <h1 className="text-4xl font-black pb-3">{gymName} - {gymnei}</h1>
                 <h3 className="text-xl font-semibold pb-2 ">Rating</h3>
                 <Ratings/>
                 <p className="font-thin">{gymDescription}</p>
@@ -33,10 +35,10 @@ const LeftColumn = ({ business }) => {
             </div>
                 <hr></hr>
             <div className="pt-5 pb-5">
-                <Reviews/>
-                <ReviewForm/> 
+                {/* <Reviews business={bus} />
+                <ReviewForm/>  */}
                 <h1 className="text-2xl font-bold pb-2">{gymName} Reviews</h1>
-                {/* <h3 className="text-">display reviews (try to find premade element and put into a component)</h3> */}
+                <h3 className="text-">display reviews (try to find premade element and put into a component)</h3>
             </div>
                 {/* <hr></hr> */}
         </div>

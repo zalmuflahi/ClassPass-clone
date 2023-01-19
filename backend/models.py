@@ -84,6 +84,7 @@ class Business(db.Model):
             'address': self.address,
             'info': self.info,
             'picture': self.picture,
+            'neighborhood': self.neighborhood,
             'activities': [activity.to_dict() for activity in Activity.query.filter_by(business_id=self.id)],
             'reviews': [reviews.to_dict() for reviews in Review.query.filter_by(business_id=self.id)]
         }

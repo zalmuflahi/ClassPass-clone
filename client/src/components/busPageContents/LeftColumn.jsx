@@ -15,27 +15,25 @@ const LeftColumn = ({ business }) => {
             <div id="image container" className="aspect-[5/3] overflow-hidden rounded-md">
                 <img className=" hover:scale-105 transition ease-in-out" src={business.picture}></img>
             </div>
-            <div className="pt-3 pb-3">
-                <h1 className="text-4xl font-black pb-3">{gymName} - {gymArea}</h1>
+            <div className="py-3">
+                <h1 className="text-4xl font-black pb-2">{gymName} - {gymArea}</h1>
                 <div className="flex items-center">
                     <h3 className="text-xl font-semibold pb-2 ">Rating</h3>
-                    <Ratings />
+                    <Ratings/>
                 </div>
                 <p className="font-thin">{gymDescription}</p>
             </div>
-            <hr></hr>
-            <div className="pt-5 pb-5">
-                <h1 className="text-2xl font-bold pb-2">Schedule</h1>
-                <Calendar />
+                <hr></hr>
+            <div className="py-3">
+                <h1 className="text-2xl font-bold">Schedule</h1>
+                <Calendar/> 
             </div>
-            <hr></hr>
-            <div className="pt-5 pb-5">
-                <Reviews />
-                <ReviewForm />
+                <hr></hr>
+            <div className="py-3">
                 <h1 className="text-2xl font-bold pb-2">{gymName} Reviews</h1>
-                {/* <h3 className="text-">display reviews (try to find premade element and put into a component)</h3> */}
+                <Reviews business={business} />
             </div>
-            {/* <hr></hr> */}
+                <hr></hr>
         </div>
     )
 }
